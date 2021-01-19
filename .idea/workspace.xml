@@ -19,11 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6d79d41-5d80-442b-8a64-41e14aa61e2c" name="Default Changelist" comment="without dynamic button">
+    <list default="true" id="c6d79d41-5d80-442b-8a64-41e14aa61e2c" name="Default Changelist" comment="With dynamic button, big logic errors cba">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +71,7 @@
       <workItem from="1610111631645" duration="12000" />
       <workItem from="1611055792703" duration="4606000" />
       <workItem from="1611060870468" duration="3383000" />
-      <workItem from="1611073103809" duration="15819000" />
+      <workItem from="1611073103809" duration="17287000" />
     </task>
     <task id="LOCAL-00001" summary="ggg">
       <created>1611073336070</created>
@@ -89,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611078952414</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="With dynamic button, big logic errors cba">
+      <created>1611090138761</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1611090138761</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,7 +115,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ggg" />
     <MESSAGE value="without dynamic button" />
-    <option name="LAST_COMMIT_MESSAGE" value="without dynamic button" />
+    <MESSAGE value="With dynamic button, big logic errors cba" />
+    <option name="LAST_COMMIT_MESSAGE" value="With dynamic button, big logic errors cba" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611056341295">

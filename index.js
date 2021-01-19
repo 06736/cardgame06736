@@ -90,11 +90,15 @@ function game(){
                     deck.splice(0, 1)
                 }
 
-            console.log(p1_temp);console.log(p2_temp);
+
             if(count === 2){
+                console.log(p1_temp + "p1")
+                console.log(p2_temp + "p2")
                 count = 0;
-                if(p1_temp.search("red")){
-                    if(p2_temp.search("red")){
+
+                if(p1_temp.includes("red")){
+
+                    if(p2_temp.includes("red")){
                         if(parseInt(p1_temp.substring(3,p1_temp.length)) > parseInt(p2_temp.substring(3,p2_temp.length))){
                             player1_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner is p1
                             $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
@@ -102,15 +106,15 @@ function game(){
                             player2_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner p2
                             $("#p3").empty().append("The champ is " + player2_name + "! Take your winnings!")
                         }
-                    }else if(p2_temp.search("yellow")){
+                    }else if(p2_temp.includes("yellow")){
                         player2_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner p2
                         $("#p3").empty().append("The champ is " + player2_name + "! Take your winnings!")
-                    }else if (p2_temp.search("black")){
+                    }else if (p2_temp.includes("black")){
                         player1_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner p1
                         $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
                     }
-                }else if(p1_temp.search("yellow")){
-                    if(p2_temp.search("yellow")){
+                }else if(p1_temp.includes("yellow")){
+                    if(p2_temp.includes("yellow")){
                         if(parseInt(p1_temp.substring(6,p1_temp.length)) > parseInt(p2_temp.substring(6,p1_temp.length))){
                             player1_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner p1
                             $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
@@ -118,15 +122,15 @@ function game(){
                             player2_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner p2
                             $("#p3").empty().append("The champ is " + player2_name + "! Take your winnings!")
                         }
-                    }else if (p2_temp.search("black")){
-                        player1_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner p1
-                        $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
-                    }else if (p2_temp.search("red")){
-                        player2_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner p2
+                    }else if (p2_temp.includes("black")){
+                        player2_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner p1
                         $("#p3").empty().append("The champ is " + player2_name + "! Take your winnings!")
+                    }else if (p2_temp.includes("red")){
+                        player1_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner p2
+                        $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
                     }
-                }else if(p1_temp.search("black")){
-                    if(p2_temp.search("black")){
+                }else if(p1_temp.includes("black")){
+                    if(p2_temp.includes("black")){
                         if(parseInt(p1_temp.substring(5,p1_temp.length)) > parseInt(p2_temp.substring(5,p1_temp.length))){
                             player1_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner p1
                             $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
@@ -134,10 +138,10 @@ function game(){
                             player2_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner p2
                             $("#p3").empty().append("The champ is " + player2_name + "! Take your winnings!")
                         }
-                    }else if (p2_temp.search("red")){
+                    }else if (p2_temp.includes("red")){
                         player2_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner p2
                         $("#p3").empty().append("The champ is " + player2_name + "! Take your winnings!")
-                    }else if(p2_temp.search("yellow")) {
+                    }else if(p2_temp.includes("yellow")) {
                         player1_cards.push(p2_temp, p1_temp); //winner p1
                         p2_temp = "";
                         p1_temp = "";
