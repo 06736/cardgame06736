@@ -4,7 +4,10 @@ let player2_name = "";
 let player1_logged_in = false;
 let player2_logged_in = false;
 let player1_cards = [];
+let p1_temp = ""
 let player2_cards = [];
+let p2_temp = "";
+let buttonCount = 0; //for creating multiple buttons with different IDs
 function shuffle(){ //creates a shuffled array of the cards
 
     let suit = ["red", "yellow", "black"]
@@ -23,21 +26,21 @@ function shuffle(){ //creates a shuffled array of the cards
     }
     console.log(deck)
 }
-
+shuffle()
 let players = [
     {
         username: "John",
         password: "Cena",
-        cards: [],
+
 
     },
     {
         username: "Ben",
         password: "Mynard",
-        cards: [],
+
     }
 ];
-shuffle()
+
 
 function login(){
     event.preventDefault(); //stops the page reloading after form submission
@@ -71,29 +74,100 @@ function login(){
 }
 
 function game(){
-    let count = 0;
-    while(count < 30){
-        $("#drawButton").css("display", "block")
-        if(count%2 === 0){
-            $("#players_turn").empty().append(player1_name + "'s turn")
-            $("#drawButton").click(function(){
-                draw_a_card();
-            })
-            count += 1
-        }else{
-            $("#players_turn").empty().append(player2_name + "'s turn")
-            $("#drawButton").click(function(){
-                draw_a_card();
-            })
-            count += 1
-        }
-    }
+    drawTheButton()
+    let count = 0
+
+        $("#my_button").click(function(){
+
+
+                if (count=== 0) {
+                    count++
+                    p1_temp = deck[0]
+                    deck.splice(0, 1)
+                } else if(count === 1){
+                    count++
+                    p2_temp = deck[0]
+                    deck.splice(0, 1)
+                }
+
+            console.log(p1_temp);console.log(p2_temp);
+            if(count === 2){
+                count = 0;
+                if(p1_temp.search("red")){
+                    if(p2_temp.search("red")){
+                        if(parseInt(p1_temp.substring(3,p1_temp.length)) > parseInt(p2_temp.substring(3,p2_temp.length))){
+                            player1_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner is p1
+                            $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
+                        }else{
+                            player2_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner p2
+                            $("#p3").empty().append("The champ is " + player2_name + "! Take your winnings!")
+                        }
+                    }else if(p2_temp.search("yellow")){
+                        player2_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner p2
+                        $("#p3").empty().append("The champ is " + player2_name + "! Take your winnings!")
+                    }else if (p2_temp.search("black")){
+                        player1_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner p1
+                        $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
+                    }
+                }else if(p1_temp.search("yellow")){
+                    if(p2_temp.search("yellow")){
+                        if(parseInt(p1_temp.substring(6,p1_temp.length)) > parseInt(p2_temp.substring(6,p1_temp.length))){
+                            player1_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner p1
+                            $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
+                        }else{
+                            player2_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner p2
+                            $("#p3").empty().append("The champ is " + player2_name + "! Take your winnings!")
+                        }
+                    }else if (p2_temp.search("black")){
+                        player1_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner p1
+                        $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
+                    }else if (p2_temp.search("red")){
+                        player2_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner p2
+                        $("#p3").empty().append("The champ is " + player2_name + "! Take your winnings!")
+                    }
+                }else if(p1_temp.search("black")){
+                    if(p2_temp.search("black")){
+                        if(parseInt(p1_temp.substring(5,p1_temp.length)) > parseInt(p2_temp.substring(5,p1_temp.length))){
+                            player1_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner p1
+                            $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
+                        }else{
+                            player2_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner p2
+                            $("#p3").empty().append("The champ is " + player2_name + "! Take your winnings!")
+                        }
+                    }else if (p2_temp.search("red")){
+                        player2_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner p2
+                        $("#p3").empty().append("The champ is " + player2_name + "! Take your winnings!")
+                    }else if(p2_temp.search("yellow")) {
+                        player1_cards.push(p2_temp, p1_temp); //winner p1
+                        p2_temp = "";
+                        p1_temp = "";
+                        $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
+                    }
+
+                }
+            }
+            if(count === 0){
+                $("#my_button").css("display", "none")
+                $("#my_button2").css("display", "block")
+                $("#my_button2").click(function(){
+                    $("#my_button").css("display", "block")
+                    $("#my_button2").css("display", "none")
+                })
+            }
+
+        })
+
+
+
+
+}
+function drawTheButton(){
+    let button = document.createElement("BUTTON")
+    button.setAttribute("id", "my_button")
+    button.innerHTML = "Draw a card";
+    document.body.appendChild(button);
 }
 
 
-function draw_a_card(){
-    $("#drawButton").css("display", "none")
-    $("#p1").append("Hello")
 
-}
 
