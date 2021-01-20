@@ -1,6 +1,12 @@
 #main_menu_play{
     display: none;
 }
+#my_button{
+    display: none;
+}
 #my_button2{
     display: none;
+}
+#para{
+    color: red;
 }

@@ -10,24 +10,22 @@ let p2_temp = "";
 let buttonCount = 0; //for creating multiple buttons with different IDs
 function shuffle(){ //creates a shuffled array of the cards
 
-    let suit = ["red", "yellow", "black"]
+    let suit = ["red", "yellow", "black"] //creates every card
     for (let i = 0; i < 3; i++){
         for(let j = 1;j<11;j++){
             deck.push(suit[i]+j.toString())
         }
     }
-    for(let i = 0; i < 31; i++){
+    for(let i = 0; i < 31; i++){ //shuffle
         let a = Math.floor((Math.random()*30));
         let b = Math.floor((Math.random()*30));
         let temp = deck[b]; //swaps the values
         deck[b] = deck[a];
         deck[a] = temp;
-
     }
-    console.log(deck)
 }
 shuffle()
-let players = [
+let players = [ //stores the players credentials
     {
         username: "John",
         password: "Cena",
@@ -67,91 +65,140 @@ function login(){
             }
         }
     }
-    if(player1_logged_in === true && player2_logged_in === true){
+    if(player1_logged_in === true && player2_logged_in === true){ // if both players have logged in
         $("#main_menu_play").css("display", "block")
         $("#p1").empty();
     }
 }
 
 function game(){
-    drawTheButton()
+    $("#main_menu_play").css("display", "none")
+    $("#my_button").css("display", "block")
+    $("#players_turn").empty().append(player1_name + "'s turn")
     let count = 0
 
-        $("#my_button").click(function(){
-
-
+        $("#my_button").click(function(){ //if the draw button is pressed
+            if(deck.length !== 0){ // as long as there are cards in the array
                 if (count=== 0) {
-                    count++
+                    count++ //count is incremented, the card is removed from the deck and added to p1s hand
                     p1_temp = deck[0]
                     deck.splice(0, 1)
-                } else if(count === 1){
+                    $("#p3").empty().append("Your card: " + p1_temp) //tells the player their card
+                    $("#players_turn").empty().append(player2_name + "'s turn")
+                } else if(count === 1){ //same as above but for p2
+                    $("#players_turn").empty()
                     count++
                     p2_temp = deck[0]
                     deck.splice(0, 1)
+
                 }
 
 
-            if(count === 2){
-                console.log(p1_temp + "p1")
-                console.log(p2_temp + "p2")
-                count = 0;
+                if(count === 2) {
+                    count = 0;
 
-                if(p1_temp.includes("red")){
+                    if (p1_temp.includes("red")) {
+                        if (p2_temp.includes("red")) {
+                            //isolates the number after the colour into a substring then converts it into an integer so the sizes can be compared
+                            if (parseInt(p1_temp.substring(3, p1_temp.length)) > parseInt(p2_temp.substring(3, p2_temp.length))) {
+                                $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
+                                $("#p4").empty().append("Matchup: " + player1_name + " had " + p1_temp + " | " + player2_name + " had " + p2_temp);
+                                player1_cards.push(p2_temp, p1_temp);
+                                p2_temp = "";
+                                p1_temp = ""; //winner is p1
+                            } else {
+                                $("#p3").empty().append("The champ is " + player2_name + "! Take your winnings!")
+                                $("#p4").empty().append("Matchup: " + player1_name + " had " + p1_temp + "| " + player2_name + " had " + p2_temp);
+                                player2_cards.push(p2_temp, p1_temp);
+                                p2_temp = "";
+                                p1_temp = ""; //winner p2
 
-                    if(p2_temp.includes("red")){
-                        if(parseInt(p1_temp.substring(3,p1_temp.length)) > parseInt(p2_temp.substring(3,p2_temp.length))){
-                            player1_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner is p1
-                            $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
-                        }else{
-                            player2_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner p2
+                            }
+                        } else if (p2_temp.includes("yellow")) { // for if the colours are different, it will decide which colour wins
                             $("#p3").empty().append("The champ is " + player2_name + "! Take your winnings!")
-                        }
-                    }else if(p2_temp.includes("yellow")){
-                        player2_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner p2
-                        $("#p3").empty().append("The champ is " + player2_name + "! Take your winnings!")
-                    }else if (p2_temp.includes("black")){
-                        player1_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner p1
-                        $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
-                    }
-                }else if(p1_temp.includes("yellow")){
-                    if(p2_temp.includes("yellow")){
-                        if(parseInt(p1_temp.substring(6,p1_temp.length)) > parseInt(p2_temp.substring(6,p1_temp.length))){
-                            player1_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner p1
-                            $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
-                        }else{
-                            player2_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner p2
-                            $("#p3").empty().append("The champ is " + player2_name + "! Take your winnings!")
-                        }
-                    }else if (p2_temp.includes("black")){
-                        player2_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner p1
-                        $("#p3").empty().append("The champ is " + player2_name + "! Take your winnings!")
-                    }else if (p2_temp.includes("red")){
-                        player1_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner p2
-                        $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
-                    }
-                }else if(p1_temp.includes("black")){
-                    if(p2_temp.includes("black")){
-                        if(parseInt(p1_temp.substring(5,p1_temp.length)) > parseInt(p2_temp.substring(5,p1_temp.length))){
-                            player1_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner p1
-                            $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
-                        }else{
-                            player2_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner p2
-                            $("#p3").empty().append("The champ is " + player2_name + "! Take your winnings!")
-                        }
-                    }else if (p2_temp.includes("red")){
-                        player2_cards.push(p2_temp, p1_temp);p2_temp = ""; p1_temp = ""; //winner p2
-                        $("#p3").empty().append("The champ is " + player2_name + "! Take your winnings!")
-                    }else if(p2_temp.includes("yellow")) {
-                        player1_cards.push(p2_temp, p1_temp); //winner p1
-                        p2_temp = "";
-                        p1_temp = "";
-                        $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
-                    }
+                            $("#p4").empty().append("Matchup: " + player1_name + " had " + p1_temp + "| " + player2_name + " had " + p2_temp);
+                            player2_cards.push(p2_temp, p1_temp);
+                            p2_temp = "";
+                            p1_temp = ""; //winner p2
 
+                        } else if (p2_temp.includes("black")) {
+                            $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
+                            $("#p4").empty().append("Matchup: " + player1_name + " had " + p1_temp + "| " + player2_name + " had " + p2_temp);
+                            player1_cards.push(p2_temp, p1_temp);
+                            p2_temp = "";
+                            p1_temp = ""; //winner p1
+
+                        }
+                    } else if (p1_temp.includes("yellow")) {
+                        if (p2_temp.includes("yellow")) {
+                            if (parseInt(p1_temp.substring(6, p1_temp.length)) > parseInt(p2_temp.substring(6, p1_temp.length))) {
+                                $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
+                                $("#p4").empty().append("Matchup: " + player1_name + " had " + p1_temp + "| " + player2_name + " had " + p2_temp);
+                                player1_cards.push(p2_temp, p1_temp);
+                                p2_temp = "";
+                                p1_temp = ""; //winner p1
+
+                            } else {
+                                $("#p3").empty().append("The champ is " + player2_name + "! Take your winnings!")
+                                $("#p4").empty().append("Matchup: " + player1_name + " had " + p1_temp + "| " + player2_name + " had " + p2_temp);
+                                player2_cards.push(p2_temp, p1_temp);
+                                p2_temp = "";
+                                p1_temp = ""; //winner p2
+
+                            }
+                        } else if (p2_temp.includes("black")) {
+                            $("#p3").empty().append("The champ is " + player2_name + "! Take your winnings!")
+                            $("#p4").empty().append("Matchup: " + player1_name + " had " + p1_temp + "| " + player2_name + " had " + p2_temp);
+                            player2_cards.push(p2_temp, p1_temp);
+                            p2_temp = "";
+                            p1_temp = ""; //winner p1
+
+                        } else if (p2_temp.includes("red")) {
+                            $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
+                            $("#p4").empty().append("Matchup: " + player1_name + " had " + p1_temp + "| " + player2_name + " had " + p2_temp);
+                            player1_cards.push(p2_temp, p1_temp);
+                            p2_temp = "";
+                            p1_temp = ""; //winner p2
+
+                        }
+                    } else if (p1_temp.includes("black")) {
+                        if (p2_temp.includes("black")) {
+                            if (parseInt(p1_temp.substring(5, p1_temp.length)) > parseInt(p2_temp.substring(5, p1_temp.length))) {
+                                $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
+                                $("#p4").empty().append("Matchup: " + player1_name + " had " + p1_temp + "| " + player2_name + " had " + p2_temp);
+                                player1_cards.push(p2_temp, p1_temp);
+                                p2_temp = "";
+                                p1_temp = ""; //winner p1
+
+                            } else {
+                                $("#p3").empty().append("The champ is " + player2_name + "! Take your winnings!")
+                                $("#p4").empty().append("Matchup: " + player1_name + " had " + p1_temp + "| " + player2_name + " had " + p2_temp);
+                                player2_cards.push(p2_temp, p1_temp);
+                                p2_temp = "";
+                                p1_temp = ""; //winner p2
+
+                            }
+                        } else if (p2_temp.includes("red")) {
+                            $("#p3").empty().append("The champ is " + player2_name + "! Take your winnings!")
+                            $("#p4").empty().append("Matchup: " + player1_name + " had " + p1_temp + "| " + player2_name + " had " + p2_temp);
+                            player2_cards.push(p2_temp, p1_temp);
+                            p2_temp = "";
+                            p1_temp = ""; //winner p2
+
+                        } else if (p2_temp.includes("yellow")) {
+                            $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
+                            $("#p4").empty().append("Matchup: " + player1_name + " had " + p1_temp + "| " + player2_name + " had " + p2_temp);
+                            player1_cards.push(p2_temp, p1_temp); //winner p1
+                            p2_temp = "";
+                            p1_temp = "";
+
+                        }
+
+                    }
                 }
             }
             if(count === 0){
-                $("#my_button").css("display", "none")
+                $("#my_button").css("display", "none") //end of round messages + continue button for the next round
                 $("#my_button2").css("display", "block")
                 $("#my_button2").click(function(){
                     $("#my_button").css("display", "block")
@@ -165,11 +212,11 @@ function game(){
 
 
 }
-function drawTheButton(){
-    let button = document.createElement("BUTTON")
-    button.setAttribute("id", "my_button")
-    button.innerHTML = "Draw a card";
-    document.body.appendChild(button);
+
+function continue_button(){
+    $("#p3").empty()
+    $("#p4").empty()
+    $("#players_turn").empty().append(player1_name + "'s turn")
 }
 
 
