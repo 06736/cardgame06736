@@ -1,3 +1,4 @@
+
 let deck = []; // the empty deck to be filled in the shuffle function
 let player1_name = "";
 let player2_name = "";
@@ -101,97 +102,38 @@ function game(){
                         if (p2_temp.includes("red")) {
                             //isolates the number after the colour into a substring then converts it into an integer so the sizes can be compared
                             if (parseInt(p1_temp.substring(3, p1_temp.length)) > parseInt(p2_temp.substring(3, p2_temp.length))) {
-                                $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
-                                $("#p4").empty().append("Matchup: " + player1_name + " had " + p1_temp + " | " + player2_name + " had " + p2_temp);
-                                player1_cards.push(p2_temp, p1_temp);
-                                p2_temp = "";
-                                p1_temp = ""; //winner is p1
+                                p1Round()
                             } else {
-                                $("#p3").empty().append("The champ is " + player2_name + "! Take your winnings!")
-                                $("#p4").empty().append("Matchup: " + player1_name + " had " + p1_temp + "| " + player2_name + " had " + p2_temp);
-                                player2_cards.push(p2_temp, p1_temp);
-                                p2_temp = "";
-                                p1_temp = ""; //winner p2
-
+                                p2Round()
                             }
                         } else if (p2_temp.includes("yellow")) { // for if the colours are different, it will decide which colour wins
-                            $("#p3").empty().append("The champ is " + player2_name + "! Take your winnings!")
-                            $("#p4").empty().append("Matchup: " + player1_name + " had " + p1_temp + "| " + player2_name + " had " + p2_temp);
-                            player2_cards.push(p2_temp, p1_temp);
-                            p2_temp = "";
-                            p1_temp = ""; //winner p2
-
+                            p2Round()
                         } else if (p2_temp.includes("black")) {
-                            $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
-                            $("#p4").empty().append("Matchup: " + player1_name + " had " + p1_temp + "| " + player2_name + " had " + p2_temp);
-                            player1_cards.push(p2_temp, p1_temp);
-                            p2_temp = "";
-                            p1_temp = ""; //winner p1
-
+                            p1Round()
                         }
                     } else if (p1_temp.includes("yellow")) {
                         if (p2_temp.includes("yellow")) {
                             if (parseInt(p1_temp.substring(6, p1_temp.length)) > parseInt(p2_temp.substring(6, p1_temp.length))) {
-                                $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
-                                $("#p4").empty().append("Matchup: " + player1_name + " had " + p1_temp + "| " + player2_name + " had " + p2_temp);
-                                player1_cards.push(p2_temp, p1_temp);
-                                p2_temp = "";
-                                p1_temp = ""; //winner p1
-
+                                p1Round()
                             } else {
-                                $("#p3").empty().append("The champ is " + player2_name + "! Take your winnings!")
-                                $("#p4").empty().append("Matchup: " + player1_name + " had " + p1_temp + "| " + player2_name + " had " + p2_temp);
-                                player2_cards.push(p2_temp, p1_temp);
-                                p2_temp = "";
-                                p1_temp = ""; //winner p2
-
+                                p2Round()
                             }
                         } else if (p2_temp.includes("black")) {
-                            $("#p3").empty().append("The champ is " + player2_name + "! Take your winnings!")
-                            $("#p4").empty().append("Matchup: " + player1_name + " had " + p1_temp + "| " + player2_name + " had " + p2_temp);
-                            player2_cards.push(p2_temp, p1_temp);
-                            p2_temp = "";
-                            p1_temp = ""; //winner p1
-
+                            p2Round()
                         } else if (p2_temp.includes("red")) {
-                            $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
-                            $("#p4").empty().append("Matchup: " + player1_name + " had " + p1_temp + "| " + player2_name + " had " + p2_temp);
-                            player1_cards.push(p2_temp, p1_temp);
-                            p2_temp = "";
-                            p1_temp = ""; //winner p2
-
+                            p1Round()
                         }
                     } else if (p1_temp.includes("black")) {
                         if (p2_temp.includes("black")) {
                             if (parseInt(p1_temp.substring(5, p1_temp.length)) > parseInt(p2_temp.substring(5, p1_temp.length))) {
-                                $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
-                                $("#p4").empty().append("Matchup: " + player1_name + " had " + p1_temp + "| " + player2_name + " had " + p2_temp);
-                                player1_cards.push(p2_temp, p1_temp);
-                                p2_temp = "";
-                                p1_temp = ""; //winner p1
-
+                                p1Round()
                             } else {
-                                $("#p3").empty().append("The champ is " + player2_name + "! Take your winnings!")
-                                $("#p4").empty().append("Matchup: " + player1_name + " had " + p1_temp + "| " + player2_name + " had " + p2_temp);
-                                player2_cards.push(p2_temp, p1_temp);
-                                p2_temp = "";
-                                p1_temp = ""; //winner p2
-
+                                p2Round()
                             }
                         } else if (p2_temp.includes("red")) {
-                            $("#p3").empty().append("The champ is " + player2_name + "! Take your winnings!")
-                            $("#p4").empty().append("Matchup: " + player1_name + " had " + p1_temp + "| " + player2_name + " had " + p2_temp);
-                            player2_cards.push(p2_temp, p1_temp);
-                            p2_temp = "";
-                            p1_temp = ""; //winner p2
-
+                            p2Round()
                         } else if (p2_temp.includes("yellow")) {
-                            $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
-                            $("#p4").empty().append("Matchup: " + player1_name + " had " + p1_temp + "| " + player2_name + " had " + p2_temp);
-                            player1_cards.push(p2_temp, p1_temp); //winner p1
-                            p2_temp = "";
-                            p1_temp = "";
-
+                            p1Round()
                         }
 
                     }
@@ -217,6 +159,20 @@ function continue_button(){
     $("#p3").empty()
     $("#p4").empty()
     $("#players_turn").empty().append(player1_name + "'s turn")
+}
+function p1Round(){
+    $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
+    $("#p4").empty().append("Matchup: " + player1_name + " had " + p1_temp + "| " + player2_name + " had " + p2_temp);
+    player1_cards.push(p2_temp, p1_temp); //winner p1
+    p1_temp = "";
+    p2_temp = "";
+}
+function p2Round(){
+    $("#p3").empty().append("The champ is " + player2_name + "! Take your winnings!")
+    $("#p4").empty().append("Matchup: " + player1_name + " had " + p1_temp + "| " + player2_name + " had " + p2_temp);
+    player2_cards.push(p2_temp, p1_temp);
+    p2_temp = "";
+    p1_temp = ""; //winner p2
 }
 
 

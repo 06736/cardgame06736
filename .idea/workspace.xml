@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6d79d41-5d80-442b-8a64-41e14aa61e2c" name="Default Changelist" comment="LOGIC ERRORS DECIMATED. THATS WHAT I CALL ALPHA">
+    <list default="true" id="c6d79d41-5d80-442b-8a64-41e14aa61e2c" name="Default Changelist" comment="some random stuff">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
@@ -29,6 +29,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -52,8 +55,14 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="javascript.nodejs.core.library.configured.version" value="14.15.1" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.14.22" />
+    <property name="jdk.selected.JAVA_MODULE" value="14" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ALIENSCAPE" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -61,6 +70,19 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\bmyna\WebstormProjects\cardgame06736" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -75,7 +97,11 @@
       <workItem from="1611055792703" duration="4606000" />
       <workItem from="1611060870468" duration="3383000" />
       <workItem from="1611073103809" duration="18111000" />
-      <workItem from="1611151799779" duration="9114000" />
+      <workItem from="1611151799779" duration="9722000" />
+      <workItem from="1611221049182" duration="607000" />
+      <workItem from="1611513872175" duration="2048000" />
+      <workItem from="1611581421602" duration="2382000" />
+      <workItem from="1611830204400" duration="11000" />
     </task>
     <task id="LOCAL-00001" summary="ggg">
       <created>1611073336070</created>
@@ -105,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611091720788</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="some random stuff">
+      <created>1611165915865</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1611165915865</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,18 +161,20 @@
     <MESSAGE value="without dynamic button" />
     <MESSAGE value="With dynamic button, big logic errors cba" />
     <MESSAGE value="LOGIC ERRORS DECIMATED. THATS WHAT I CALL ALPHA" />
-    <option name="LAST_COMMIT_MESSAGE" value="LOGIC ERRORS DECIMATED. THATS WHAT I CALL ALPHA" />
+    <MESSAGE value="some random stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="some random stuff" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611056341295">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.-112.1920.1160@0.0.1920.1040" timestamp="1611056341295" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1611067384921">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1180" y="195" key="FileChooserDialogImpl" timestamp="1611830211085">
+      <screen x="-1920" y="-112" width="1920" height="1160" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1920.-109.1920.1160@0.0.1920.1040" timestamp="1609849071498" />
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1920.-112.1920.1160@0.0.1920.1040" timestamp="1611067384921" />
+    <state x="-1180" y="195" key="FileChooserDialogImpl/0.0.1920.1040/-1920.-112.1920.1160@-1920.-112.1920.1160" timestamp="1611830211085" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1920.-112.1920.1160@0.0.1920.1040" timestamp="1611583109987" />
     <state x="824" y="418" key="Github.ShareDialog" timestamp="1609849173218">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -220,6 +255,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.-112.1920.1160@0.0.1920.1040" timestamp="1611091732002" />
+    <state x="597" y="140" width="1101" height="759" key="new project wizard" timestamp="1611583212742">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="597" y="140" width="1101" height="759" key="new project wizard/0.0.1920.1040/-1920.-112.1920.1160@0.0.1920.1040" timestamp="1611583212742" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1611164372006">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
