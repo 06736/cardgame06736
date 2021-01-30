@@ -19,10 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6d79d41-5d80-442b-8a64-41e14aa61e2c" name="Default Changelist" comment="some random stuff">
+    <list default="true" id="c6d79d41-5d80-442b-8a64-41e14aa61e2c" name="Default Changelist" comment="some random stuff 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -102,6 +101,8 @@
       <workItem from="1611513872175" duration="2048000" />
       <workItem from="1611581421602" duration="2382000" />
       <workItem from="1611830204400" duration="11000" />
+      <workItem from="1611833247009" duration="639000" />
+      <workItem from="1612022128993" duration="6754000" />
     </task>
     <task id="LOCAL-00001" summary="ggg">
       <created>1611073336070</created>
@@ -138,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611165915865</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="some random stuff 2">
+      <created>1611833262631</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1611833262631</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,19 +170,20 @@
     <MESSAGE value="With dynamic button, big logic errors cba" />
     <MESSAGE value="LOGIC ERRORS DECIMATED. THATS WHAT I CALL ALPHA" />
     <MESSAGE value="some random stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="some random stuff" />
+    <MESSAGE value="some random stuff 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="some random stuff 2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611056341295">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.-112.1920.1160@0.0.1920.1040" timestamp="1611056341295" />
-    <state x="-1180" y="195" key="FileChooserDialogImpl" timestamp="1611830211085">
-      <screen x="-1920" y="-112" width="1920" height="1160" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1612022361835">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1920.-109.1920.1160@0.0.1920.1040" timestamp="1609849071498" />
     <state x="-1180" y="195" key="FileChooserDialogImpl/0.0.1920.1040/-1920.-112.1920.1160@-1920.-112.1920.1160" timestamp="1611830211085" />
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1920.-112.1920.1160@0.0.1920.1040" timestamp="1611583109987" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1920.-112.1920.1160@0.0.1920.1040" timestamp="1612022361835" />
     <state x="824" y="418" key="Github.ShareDialog" timestamp="1609849173218">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -251,9 +260,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1920.-112.1920.1160@0.0.1920.1040" timestamp="1611152311628" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1611091732002">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1368" y="170" key="Vcs.Push.Dialog.v2" timestamp="1611833266405">
+      <screen x="-1920" y="-112" width="1920" height="1160" />
     </state>
+    <state x="-1368" y="170" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.-112.1920.1160@-1920.-112.1920.1160" timestamp="1611833266405" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.-112.1920.1160@0.0.1920.1040" timestamp="1611091732002" />
     <state x="597" y="140" width="1101" height="759" key="new project wizard" timestamp="1611583212742">
       <screen x="0" y="0" width="1920" height="1040" />
