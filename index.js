@@ -43,12 +43,14 @@ let players = [ //stores the players credentials
 
 function login(){
     event.preventDefault(); //stops the page reloading after form submission
+    let login = false;
     let username = $("#htmlUsername").val() // variables for the values of the form submission
     let password = $("#htmlPassword").val()
     $(".input1").val("") //makes the form blank again
     for (let i = 0; i < 2; i++) {
         if (username === players[i]["username"]) { // if the username input matches a username from the "database"
             if (password === players[i]["password"]) { // if the password input matches with the username adjacent to it in the "database"
+                login = true;
                 if (!player1_logged_in) { // if player 1 is not logged in
                     $("#p1").empty().append("Login for player 1 successful!")
                     player1_logged_in = true
@@ -65,6 +67,11 @@ function login(){
                 }
             }
         }
+    }
+    if(!login){
+        $("#login_form1").css("border-color", "red").css("transition", "0.5s")
+    }else{
+        $("#login_form1").css("border-color", "mediumaquamarine").css("transition", "0.5s")
     }
     if(player1_logged_in === true && player2_logged_in === true){ // if both players have logged in
         $("#main_menu_play").css("display", "block")

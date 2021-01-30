@@ -1,5 +1,6 @@
-body{
-    background-color: steelblue;
+html{
+    height: 100%;
+    background-image: linear-gradient(to bottom right,#468499 ,#407294);
 }
 #main_menu_play{
     display: none;
