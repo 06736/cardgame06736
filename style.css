@@ -159,7 +159,7 @@ input[type="submit"]{
     width: 20%;
     height: 75%;
     top: 12%;
-    display: inline-block;
+    display: none;
     transition: 0.5s;
 }
 #player1turn{

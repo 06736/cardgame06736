@@ -19,10 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6d79d41-5d80-442b-8a64-41e14aa61e2c" name="Default Changelist" comment="tiny bit of css smoothing">
-      <change afterPath="$PROJECT_DIR$/rickroll.jpg" afterDir="false" />
+    <list default="true" id="c6d79d41-5d80-442b-8a64-41e14aa61e2c" name="Default Changelist" comment="Mad css">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
@@ -108,7 +106,7 @@
       <workItem from="1611830204400" duration="11000" />
       <workItem from="1611833247009" duration="639000" />
       <workItem from="1612022128993" duration="8970000" />
-      <workItem from="1612104212321" duration="9921000" />
+      <workItem from="1612104212321" duration="12179000" />
     </task>
     <task id="LOCAL-00001" summary="ggg">
       <created>1611073336070</created>
@@ -166,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612030502008</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Mad css">
+      <created>1612120977930</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1612120977930</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,7 +198,8 @@
     <MESSAGE value="some random stuff 2" />
     <MESSAGE value="Some mad css for the login form" />
     <MESSAGE value="tiny bit of css smoothing" />
-    <option name="LAST_COMMIT_MESSAGE" value="tiny bit of css smoothing" />
+    <MESSAGE value="Mad css" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mad css" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611056341295">

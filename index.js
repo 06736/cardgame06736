@@ -26,6 +26,7 @@ function shuffle(){ //creates a shuffled array of the cards
     }
 }
 shuffle()
+
 let players = [ //stores the players credentials
     {
         username: "John",
@@ -87,11 +88,11 @@ function login(){
 }
 
 function game(){
-
+    console.log(deck)
     $("#main_menu_play").css("display", "none")
     $("#my_button").css("display", "inline-block")
     $(".pl").css("display", "flex");
-    $(".playerturn").css("height", "75%").css("width", "20%").css("top", "12%")
+    $(".playerturn").css("height", "75%").css("width", "20%").css("top", "12%").css("display", "inline-block")
     $("#player1turn").css("width", "38%").css("height", "90%").css("top", "5%")
     let count = 0
 
