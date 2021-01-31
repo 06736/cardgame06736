@@ -13,14 +13,23 @@
         <input type="submit" onclick="login()" value="SUBMIT" id="login_button">
     </form>
 </div>
-<button id="main_menu_play" onclick="game()">PLAY</button>
-<button id="my_button">Draw a card</button>
+<div id="mmpdiv">
+    <button id="main_menu_play" onclick="game()" class="openingbuttons">PLAY</button>
+</div>
+<div id="mbdiv">
+    <button id="my_button" class="openingbuttons">Draw a card</button>
+</div>
 <p1 id="p1"></p1>
 <p2 id="players_turn"></p2>
 <p3 id="p3"></p3>
 <p4 id="p4"></p4>
+<div id="pl1" class="pl"></div>
+<div id="pl2" class="pl"></div>
+<div id="player1turn" class="playerturn"></div>
+<div id="player2turn" class="playerturn"></div>
 <script src="index.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <button id="my_button2" onclick="continue_button()">Continue</button>
+
 </body>
 </html>

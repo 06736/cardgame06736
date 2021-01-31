@@ -1,16 +1,67 @@
 html{
     height: 100%;
     background-image: linear-gradient(to bottom right,#468499 ,#407294);
+
 }
-#main_menu_play{
+
+
+.openingbuttons{
     display: none;
+    /*display: inline-block;*/
+    position: absolute;
+    border-style: solid;
+    outline: none;
+    border-color: mediumpurple;
+    transition: 0.5s;
+    background-color: #407294;
+    /*background-image: url("rickroll.jpg");*/
+    color: white;
+    height: 5%;
+    width: 20%;
+    font-size: 20px;
+    font-family: sans-serif;
+    border-radius: 20px;
+    text-align: center;
+    vertical-align: middle;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    margin: auto;
+    top: 30%;
+
 }
-#my_button{
-    display: none;
+div#mmpdiv{
+    text-align: center;
+}
+#main_menu_play:hover{
+    width: 50%;
+    height: 25%;
+    border-radius: 50px;
+    font-size: 50px;
+    border-width: 20px;
+}
+/*The "draw a card" button*/
+
+#mbdiv{
+    text-align: center;
 }
 #my_button2{
     display: none;
 }
+.pl{
+    color: white;
+    display: flex;
+    font-size: 40px;
+}
+#pl1{
+    float: left;
+
+
+}
+#pl2{
+    float: right;
+
+}
+/*below is all for the login form*/
 #login_form1{
     display: flex;
     flex-direction: column;
@@ -95,6 +146,29 @@ input[type="submit"]{
     text-align: center;
     width: 40%;
     border-color: mediumaquamarine;
+}
+/*styling for the game (buttons and stuff)*/
 
 
+/*styling for the cards & player turns*/
+.playerturn{
+    position: fixed;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: mediumpurple;
+    width: 20%;
+    height: 75%;
+    top: 12%;
+    display: inline-block;
+    transition: 0.5s;
+}
+#player1turn{
+
+    left: 1%;
+    transform: translate(-1%, 0%);
+}
+#player2turn{
+
+    left: 99%;
+    transform: translate(-99%, 0%);
 }

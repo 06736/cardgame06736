@@ -52,52 +52,65 @@ function login(){
             if (password === players[i]["password"]) { // if the password input matches with the username adjacent to it in the "database"
                 login = true;
                 if (!player1_logged_in) { // if player 1 is not logged in
-                    $("#p1").empty().append("Login for player 1 successful!")
                     player1_logged_in = true
                     player1_name += username
+                    $("#pl1").append(player1_name);
                 }else{ //if a player is logged in
                     if(player1_name === username){ //wont let the same person log in twice
-                        $("#p1").empty().append("Player already logged in!")
+                        login = false;
                     }else{
-                        $("#p1").empty().append("Login for player 2 successful!") // logs in the second player and hides the form
+                         // logs in the second player and hides the form
                         $("#login_form1").css("display", "none")
                         player2_logged_in = true
                         player2_name += username
+                        $("#pl2").append(player2_name);
                     }
                 }
             }
         }
     }
+    let flash;
     if(!login){
-        $("#login_form1").css("border-color", "red").css("transition", "0.5s")
+        $("#login_form1").css("border-color", "red").css("transition", "0.5s");
+        flash = setTimeout(function (){
+            $("#login_form1").css("border-color", "mediumpurple").css("transition", "1.5s");
+        }, 1000)
     }else{
-        $("#login_form1").css("border-color", "mediumaquamarine").css("transition", "0.5s")
+        $("#login_form1").css("border-color", "mediumaquamarine").css("transition", "0.5s");
+        flash = setTimeout(function (){
+            $("#login_form1").css("border-color", "mediumpurple").css("transition", "1.5s");
+        }, 1000)
     }
     if(player1_logged_in === true && player2_logged_in === true){ // if both players have logged in
-        $("#main_menu_play").css("display", "block")
-        $("#p1").empty();
+        $("#main_menu_play").css("display", "inline-block")
     }
 }
 
 function game(){
+
     $("#main_menu_play").css("display", "none")
-    $("#my_button").css("display", "block")
-    $("#players_turn").empty().append(player1_name + "'s turn")
+    $("#my_button").css("display", "inline-block")
+    $(".pl").css("display", "flex");
+    $(".playerturn").css("height", "75%").css("width", "20%").css("top", "12%")
+    $("#player1turn").css("width", "38%").css("height", "90%").css("top", "5%")
     let count = 0
 
         $("#my_button").click(function(){ //if the draw button is pressed
+
+            $("#player1turn").css("width", "38%").css("height", "90%").css("top", "5%")
             if(deck.length !== 0){ // as long as there are cards in the array
                 if (count=== 0) {
                     count++ //count is incremented, the card is removed from the deck and added to p1s hand
                     p1_temp = deck[0]
                     deck.splice(0, 1)
                     $("#p3").empty().append("Your card: " + p1_temp) //tells the player their card
-                    $("#players_turn").empty().append(player2_name + "'s turn")
+                    $(".playerturn").css("height", "75%").css("width", "20%").css("top", "12%")
+                    $("#player2turn").css("width", "38%").css("height", "90%").css("top", "5%")
                 } else if(count === 1){ //same as above but for p2
-                    $("#players_turn").empty()
                     count++
                     p2_temp = deck[0]
                     deck.splice(0, 1)
+
 
                 }
 
@@ -146,9 +159,11 @@ function game(){
                     }
                 }
             }
+
             if(count === 0){
                 $("#my_button").css("display", "none") //end of round messages + continue button for the next round
                 $("#my_button2").css("display", "block")
+                $(".playerturn").css("height", "75%").css("width", "20%").css("top", "12%")
                 $("#my_button2").click(function(){
                     $("#my_button").css("display", "block")
                     $("#my_button2").css("display", "none")
@@ -160,12 +175,14 @@ function game(){
 
 
 
+
 }
 
 function continue_button(){
     $("#p3").empty()
     $("#p4").empty()
-    $("#players_turn").empty().append(player1_name + "'s turn")
+    $(".playerturn").css("height", "75%").css("width", "20%").css("top", "12%")
+    game()
 }
 function p1Round(){
     $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
