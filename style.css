@@ -161,14 +161,41 @@ input[type="submit"]{
     top: 12%;
     display: none;
     transition: 0.5s;
+    margin: 0 auto;
+
 }
 #player1turn{
-
     left: 1%;
     transform: translate(-1%, 0%);
+
 }
 #player2turn{
-
     left: 99%;
     transform: translate(-99%, 0%);
+
+}
+.playercard{
+    border-color: mediumpurple;
+    border-style: solid;
+    height: 50%;
+    width: 60%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    top: 25%;
+    position: relative;
+    border-radius: 20px;
+    visibility: hidden;
+    font-size: 100px;
+
+}
+.card_number{
+    width: 10%;
+    height: 10%;
+    padding: 0;
+    justify-content: center;
+    left: 40%;
+    transform: translate(-40%, 0%);
+    top: 30%;
+    position: relative;
+
 }

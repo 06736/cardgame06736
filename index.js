@@ -9,6 +9,7 @@ let p1_temp = ""
 let player2_cards = [];
 let p2_temp = "";
 let buttonCount = 0; //for creating multiple buttons with different IDs
+let startdraw = true;
 function shuffle(){ //creates a shuffled array of the cards
 
     let suit = ["red", "yellow", "black"] //creates every card
@@ -88,31 +89,39 @@ function login(){
 }
 
 function game(){
-    console.log(deck)
+
     $("#main_menu_play").css("display", "none")
     $("#my_button").css("display", "inline-block")
     $(".pl").css("display", "flex");
-    $(".playerturn").css("height", "75%").css("width", "20%").css("top", "12%").css("display", "inline-block")
-    $("#player1turn").css("width", "38%").css("height", "90%").css("top", "5%")
+    $(".playerturn").css("height", "75%").css("width", "20%").css("top", "12%").css("display", "inline-block").css("border-color", "mediumpurple")
+    $("#player1turn").css("width", "38%").css("height", "90%").css("top", "5%").css("border-color", "mediumaquamarine")
     let count = 0
 
         $("#my_button").click(function(){ //if the draw button is pressed
-
-            $("#player1turn").css("width", "38%").css("height", "90%").css("top", "5%")
+            $("#player2turn").css("width", "38%").css("height", "90%").css("top", "5%")
             if(deck.length !== 0){ // as long as there are cards in the array
                 if (count=== 0) {
-                    count++ //count is incremented, the card is removed from the deck and added to p1s hand
                     p1_temp = deck[0]
+                    if(startdraw){
+                        startdraw=false;
+                        card_creation(p1_temp, p2_temp, count)
+                        $(".playerturn").css("height", "75%").css("width", "20%").css("top", "12%").css("border-color", "mediumpurple")
+                        $("#player2turn").css("width", "38%").css("height", "90%").css("top", "5%").css("border-color", "mediumaquamarine")
+
+                    }else{
+                        card_creation(p1_temp, p2_temp, count)
+                        $(".playerturn").css("height", "75%").css("width", "20%").css("top", "12%").css("border-color", "mediumpurple")
+                        $("#player2turn").css("width", "38%").css("height", "90%").css("top", "5%").css("border-color", "mediumaquamarine")
+                    }
+                    count++ //count is incremented, the card is removed from the deck and added to p1s hand
                     deck.splice(0, 1)
-                    $("#p3").empty().append("Your card: " + p1_temp) //tells the player their card
-                    $(".playerturn").css("height", "75%").css("width", "20%").css("top", "12%")
-                    $("#player2turn").css("width", "38%").css("height", "90%").css("top", "5%")
-                } else if(count === 1){ //same as above but for p2
+                }else if(count === 1){
+                    //same as above but for p2
                     count++
+                    console.log(count)
                     p2_temp = deck[0]
+                    card_creation(p1_temp, p2_temp, count)
                     deck.splice(0, 1)
-
-
                 }
 
 
@@ -120,10 +129,12 @@ function game(){
                     count = 0;
 
                     if (p1_temp.includes("red")) {
+
                         if (p2_temp.includes("red")) {
                             //isolates the number after the colour into a substring then converts it into an integer so the sizes can be compared
                             if (parseInt(p1_temp.substring(3, p1_temp.length)) > parseInt(p2_temp.substring(3, p2_temp.length))) {
                                 p1Round()
+
                             } else {
                                 p2Round()
                             }
@@ -164,7 +175,7 @@ function game(){
             if(count === 0){
                 $("#my_button").css("display", "none") //end of round messages + continue button for the next round
                 $("#my_button2").css("display", "block")
-                $(".playerturn").css("height", "75%").css("width", "20%").css("top", "12%")
+                $(".playerturn").css("height", "75%").css("width", "20%").css("top", "12%").css("border-color", "mediumpurple")
                 $("#my_button2").click(function(){
                     $("#my_button").css("display", "block")
                     $("#my_button2").css("display", "none")
@@ -182,8 +193,10 @@ function game(){
 function continue_button(){
     $("#p3").empty()
     $("#p4").empty()
-    $(".playerturn").css("height", "75%").css("width", "20%").css("top", "12%")
-    game()
+    $(".playerturn").css("height", "75%").css("width", "20%").css("top", "12%").css("border-color", "mediumpurple")
+    $("#player1turn").css("width", "38%").css("height", "90%").css("top", "5%").css("border-color", "mediumaquamarine")
+    $(".playercard").css("visibility", "hidden")
+
 }
 function p1Round(){
     $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
@@ -200,6 +213,31 @@ function p2Round(){
     p1_temp = ""; //winner p2
 }
 
+function card_creation(p1_temp, p2_temp, count){
+    if (count === 0){
+        if(p1_temp.includes("red")){ //if the card is red
+            $("#player1card").css("background-image", "linear-gradient(to bottom right, red, darkred)").css("visibility", "visible");
+            $("#p1_number").css("color", "darkslateblue").empty().append(p1_temp.substring(3, p1_temp.length));
+        }else if(p1_temp.includes("black")){
+            $("#player1card").css("background-image", "linear-gradient(to bottom right, gray, black)").css("visibility", "visible")
+            $("#p1_number").css("color", "white").empty().append(p1_temp.substring(5, p1_temp.length))
+        }else{ //yellow
+            $("#player1card").css("background-image", "linear-gradient(to bottom right, yellow, orange)").css("visibility", "visible")
+            $("#p1_number").css("color", "mediumvioletred").empty().append(p1_temp.substring(6, p1_temp.length))
+        }
+    }else{
+        if(p2_temp.includes("red")){ //if the card is red
+            $("#player2card").css("background-image", "linear-gradient(to bottom right, red, darkred)").css("visibility", "visible")
+            $("#p2_number").css("color", "darkslateblue").empty().append(p2_temp.substring(3, p2_temp.length));
+        }else if(p2_temp.includes("black")){
+            $("#player2card").css("background-image", "linear-gradient(to bottom right, gray, black)").css("visibility", "visible")
+            $("#p2_number").css("color", "white").empty().append(p2_temp.substring(5, p2_temp.length))
+        }else{ //yellow
+            $("#player2card").css("background-image", "linear-gradient(to bottom right, yellow, orange)").css("visibility", "visible")
+            $("#p2_number").css("color", "mediumvioletred").empty().append(p2_temp.substring(6, p2_temp.length))
+        }
+    }
 
+}
 
 
