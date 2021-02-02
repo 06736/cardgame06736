@@ -170,6 +170,8 @@ function game(){
 
                     }
                 }
+            }else{
+
             }
 
             if(count === 0){
@@ -192,22 +194,19 @@ function game(){
 
 function continue_button(){
     $("#p3").empty()
-    $("#p4").empty()
     $(".playerturn").css("height", "75%").css("width", "20%").css("top", "12%").css("border-color", "mediumpurple")
     $("#player1turn").css("width", "38%").css("height", "90%").css("top", "5%").css("border-color", "mediumaquamarine")
     $(".playercard").css("visibility", "hidden")
 
 }
 function p1Round(){
-    $("#p3").empty().append("The champ is " + player1_name + "! Take your winnings!")
-    $("#p4").empty().append("Matchup: " + player1_name + " had " + p1_temp + "| " + player2_name + " had " + p2_temp);
+    $("#p3").empty().append(player1_name + " wins!")
     player1_cards.push(p2_temp, p1_temp); //winner p1
     p1_temp = "";
     p2_temp = "";
 }
 function p2Round(){
-    $("#p3").empty().append("The champ is " + player2_name + "! Take your winnings!")
-    $("#p4").empty().append("Matchup: " + player1_name + " had " + p1_temp + "| " + player2_name + " had " + p2_temp);
+    $("#p3").empty().append(player2_name + " wins")
     player2_cards.push(p2_temp, p1_temp);
     p2_temp = "";
     p1_temp = ""; //winner p2
@@ -237,7 +236,13 @@ function card_creation(p1_temp, p2_temp, count){
             $("#p2_number").css("color", "mediumvioletred").empty().append(p2_temp.substring(6, p2_temp.length))
         }
     }
-
+}
+function endGame(){ //this will occur when the deck length is 0
+    //removes everything on the screen
+    //some animations
+    //declares the winner
+    //option to play again
+    //option to view overall scoreboard (later on)
 }
 
 

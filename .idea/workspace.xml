@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6d79d41-5d80-442b-8a64-41e14aa61e2c" name="Default Changelist" comment="Some dynamic CSS for the card-holders. Need to fix: deck splicing and add cards!">
+    <list default="true" id="c6d79d41-5d80-442b-8a64-41e14aa61e2c" name="Default Changelist" comment="Now has cards!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
@@ -108,7 +108,8 @@
       <workItem from="1611833247009" duration="639000" />
       <workItem from="1612022128993" duration="8970000" />
       <workItem from="1612104212321" duration="12238000" />
-      <workItem from="1612187029739" duration="9010000" />
+      <workItem from="1612187029739" duration="9031000" />
+      <workItem from="1612258022226" duration="3071000" />
     </task>
     <task id="LOCAL-00001" summary="ggg">
       <created>1611073336070</created>
@@ -180,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612128833858</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Now has cards!">
+      <created>1612204695124</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1612204695124</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,7 +217,8 @@
     <MESSAGE value="tiny bit of css smoothing" />
     <MESSAGE value="Mad css" />
     <MESSAGE value="Some dynamic CSS for the card-holders. Need to fix: deck splicing and add cards!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some dynamic CSS for the card-holders. Need to fix: deck splicing and add cards!" />
+    <MESSAGE value="Now has cards!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Now has cards!" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611056341295">
@@ -298,11 +307,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1920.-112.1920.1160@0.0.1920.1040" timestamp="1612189033827" />
-    <state x="-1368" y="170" key="Vcs.Push.Dialog.v2" timestamp="1612128842668">
-      <screen x="-1920" y="-112" width="1920" height="1160" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1612204696779">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1368" y="170" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.-112.1920.1160@-1920.-112.1920.1160" timestamp="1612128842668" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.-112.1920.1160@0.0.1920.1040" timestamp="1612029168644" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.-112.1920.1160@0.0.1920.1040" timestamp="1612204696779" />
     <state x="-1659" y="-123" width="1520" height="1027" maximized="true" key="dock-window-1" timestamp="1612120154858">
       <screen x="-1920" y="-112" width="1920" height="1160" />
     </state>
